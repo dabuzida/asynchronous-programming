@@ -7,11 +7,12 @@ function p(id, ms) {
 }
 // callstack, background, task queue에서 p(1), p(2), p(3)이
 // 순서대로 background에 들어가서 진행됨
+// 비독립적인 비동기 호출 1개
 console.log("start");
 p(1, 3000)
   .then((resolve) => {
     console.log(resolve);
-    return p(2, 5000);
+    return p(2, 2000);
   })
   .then((resolve) => {
     console.log(resolve);

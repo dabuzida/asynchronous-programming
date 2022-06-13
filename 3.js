@@ -5,6 +5,8 @@ function p(id, ms) {
     }, ms);
   });
 }
+
+// 독립적인 비동기 호출 3개
 console.log("start");
 p(1, 3000).then((resolve) => console.log(resolve));
 p(2, 2000).then((resolve) => console.log(resolve));
